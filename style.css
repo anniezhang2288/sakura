@@ -33,7 +33,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', sans-serif;
   background: var(--bg);
   color: var(--text-dark);
   line-height: 1.7;
@@ -75,7 +75,7 @@ body {
 }
 
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 28px;
   color: var(--pink-600);
   letter-spacing: 2px;
@@ -134,7 +134,7 @@ body {
 }
 
 .hero-greeting {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 20px;
   font-weight: 300;
   font-style: italic;
@@ -146,12 +146,12 @@ body {
 }
 
 .hero-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(56px, 10vw, 96px);
   font-weight: 300;
   color: var(--text-dark);
   line-height: 1.05;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
   margin-bottom: 16px;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s ease forwards;
@@ -277,7 +277,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: clamp(36px, 5vw, 54px);
   font-weight: 300;
   color: var(--text-dark);
@@ -323,11 +323,16 @@ body {
   aspect-ratio: 1;
   border-radius: calc(var(--radius) - 4px);
   background: linear-gradient(135deg, var(--pink-200) 0%, var(--pink-300) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
   margin-bottom: 24px;
-  font-size: 72px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .about-details {
@@ -370,6 +375,128 @@ body {
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
+}
+
+/* ─── Experience ─── */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--pink-400);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.exp-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--pink-600);
+}
+
+.exp-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.exp-logo {
+  width: 192px;
+  height: 192px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 1px solid rgba(0,0,0,0.07);
+}
+
+.exp-logo img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-company {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.exp-role {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pink-600);
+  letter-spacing: 0.3px;
+}
+
+.exp-date {
+  font-size: 12px;
+  color: var(--text-light);
+  white-space: nowrap;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  padding-top: 4px;
+}
+
+.exp-bullets {
+  list-style: none;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-bullets li {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  padding-left: 16px;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--pink-400);
+}
+
+.exp-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* ─── Projects ─── */
@@ -428,7 +555,7 @@ body {
 }
 
 .project-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 22px;
   font-weight: 400;
   color: var(--text-dark);
@@ -482,7 +609,7 @@ body {
 }
 
 .skill-group-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 22px;
   font-weight: 400;
   color: var(--pink-600);

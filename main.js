@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
 
 /* ─── Scroll-reveal for sections ─── */
 const revealEls = document.querySelectorAll(
-  '.about-grid, .about-card-inner, .project-card, .skill-group, .contact-inner'
+  '.about-grid, .about-card-inner, .exp-card, .project-card, .skill-group, .contact-inner'
 );
 
 revealEls.forEach(el => el.classList.add('reveal'));
@@ -30,6 +30,9 @@ const observer = new IntersectionObserver(
 // Add stagger delays to grid children
 document.querySelectorAll('.projects-grid .project-card').forEach((el, i) => {
   el.dataset.delay = i * 120;
+});
+document.querySelectorAll('.experience-list .exp-card').forEach((el, i) => {
+  el.dataset.delay = i * 80;
 });
 document.querySelectorAll('.skills-grid .skill-group').forEach((el, i) => {
   el.dataset.delay = i * 100;

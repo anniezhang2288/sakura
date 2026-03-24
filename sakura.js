@@ -28,6 +28,18 @@
     [255, 220, 232],
   ];
 
+  // ── Mouse tracking ──
+  let mouseX = -9999, mouseY = -9999;
+  let mouseSpeed = 0; // decays each frame when mouse is still
+
+  window.addEventListener('mousemove', (e) => {
+    const dx = e.clientX - mouseX;
+    const dy = e.clientY - mouseY;
+    mouseSpeed = Math.min(Math.sqrt(dx * dx + dy * dy), 40); // cap so it's not crazy fast
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
   // ── Global wind / gust system ──
   let gust      = 0;   // current extra rightward push
   let gustDecay = 0;
@@ -170,6 +182,10 @@
       // Response to gusts (near petals react more)
       this.gustResponse  = 0.5 + this.depth * 0.7;
 
+      // Mouse repulsion velocity (decays on its own)
+      this.repelVX = 0;
+      this.repelVY = 0;
+
       this.age = 0;
 
       const col  = PETAL_COLORS[Math.floor(Math.random() * PETAL_COLORS.length)];
@@ -184,10 +200,27 @@
       const rot = this.baseRot
         + this.flutterAmp * Math.sin(this.age * this.flutterFreq + this.flutterOffset);
 
-      // Horizontal: base breeze + wobble + gust response
+      // ── Mouse repulsion ──
+      if (mouseSpeed > 1.5) {
+        const dx   = this.x - mouseX;
+        const dy   = this.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const repelRadius = 70 + this.size; // near petals have bigger bubble
+        if (dist < repelRadius && dist > 0) {
+          const strength = ((repelRadius - dist) / repelRadius) * mouseSpeed
+                           * (0.12 + this.depth * 0.10); // near petals react more
+          this.repelVX += (dx / dist) * strength;
+          this.repelVY += (dy / dist) * strength;
+        }
+      }
+      // Repulsion damps out quickly so petals drift back naturally
+      this.repelVX *= 0.88;
+      this.repelVY *= 0.88;
+
+      // Horizontal: base breeze + wobble + gust + mouse repulsion
       const wx = Math.sin(this.age * this.wobbleFreq + this.wobbleOffset) * this.wobbleAmp;
-      this.x  += this.driftX + wx + gust * this.gustResponse;
-      this.y  += this.speedY;
+      this.x  += this.driftX + wx + gust * this.gustResponse + this.repelVX;
+      this.y  += this.speedY + this.repelVY;
       this.rot = rot;
 
       // Fade near bottom
@@ -213,6 +246,7 @@
 
   function animate() {
     ctx.clearRect(0, 0, W, H);
+    mouseSpeed *= 0.82; // fade mouse effect when cursor is idle
     tickGust();
     for (const p of petals) {
       p.update();
