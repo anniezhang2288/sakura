@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annie Zhang — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cherry Blossom Canvas -->
+  <canvas id="sakura-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <span class="nav-logo">桜</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Annie Zhang</h1>
+      <p class="hero-title">Designer &amp; Developer</p>
+      <p class="hero-sub">I craft beautiful digital experiences with care and intention.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-label">01 — About</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title">A little about me</h2>
+          <p>I'm a passionate designer and developer who loves building things that live on the internet. I care deeply about the details — the tiny interactions, the subtle animations, the way a page feels when you scroll through it.</p>
+          <p>When I'm not at my desk, you'll find me reading, exploring nature trails, or trying to photograph the perfect cherry blossom.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-inner">
+            <div class="about-photo-placeholder">
+              <span class="photo-icon">🌸</span>
+            </div>
+            <div class="about-details">
+              <div class="detail-item">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">San Francisco, CA</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Focus</span>
+                <span class="detail-value">UI/UX &amp; Frontend</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Available</span>
+                <span class="detail-value available">Open to work</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section class="section section-alt" id="work">
+    <div class="container">
+      <div class="section-label">02 — Work</div>
+      <h2 class="section-title">Selected Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #f9c5d1 0%, #e8a0b4 100%);">
+            <span class="project-emoji">🌸</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+            </div>
+            <h3 class="project-title">Bloom Design System</h3>
+            <p class="project-desc">A comprehensive component library built with React and TypeScript, inspired by the delicate beauty of Japanese aesthetics.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #c5d5f9 0%, #a0b4e8 100%);">
+            <span class="project-emoji">🌊</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">User Research</span>
+            </div>
+            <h3 class="project-title">Wave Mobile App</h3>
+            <p class="project-desc">End-to-end product design for a mindfulness app — from user research and wireframes to a polished high-fidelity prototype.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image" style="background: linear-gradient(135deg, #d5f9c5 0%, #b4e8a0 100%);">
+            <span class="project-emoji">✨</span>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind</span>
+            </div>
+            <h3 class="project-title">Sparkle Commerce</h3>
+            <p class="project-desc">A fast, accessible e-commerce storefront with a focus on performance and a delightful shopping experience.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label">03 — Skills</div>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3 class="skill-group-title">Design</h3>
+          <ul class="skill-list">
+            <li>Figma</li>
+            <li>User Research</li>
+            <li>Prototyping</li>
+            <li>Design Systems</li>
+            <li>Motion Design</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Frontend</h3>
+          <ul class="skill-list">
+            <li>HTML / CSS / JS</li>
+            <li>React &amp; Next.js</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
+            <li>Framer Motion</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3 class="skill-group-title">Backend &amp; Tools</h3>
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Git &amp; GitHub</li>
+            <li>REST APIs</li>
+            <li>SQL &amp; MongoDB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-label">04 — Contact</div>
+      <div class="contact-inner">
+        <h2 class="section-title contact-title">Let's work together</h2>
+        <p class="contact-sub">Have a project in mind or just want to say hello? My inbox is always open.</p>
+        <a href="mailto:hello@anniezhang.com" class="btn btn-primary btn-lg">Say Hello 🌸</a>
+        <div class="social-links">
+          <a href="#" class="social-link">GitHub</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">LinkedIn</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">Twitter</a>
+          <span class="social-sep">·</span>
+          <a href="#" class="social-link">Dribbble</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Designed &amp; built by Annie Zhang &nbsp;·&nbsp; 2026 &nbsp;桜</p>
+  </footer>
+
+  <script src="sakura.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
